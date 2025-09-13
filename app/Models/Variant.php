@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class Vendor extends BaseModel
+class Variant extends BaseModel
 {
     //
 }
