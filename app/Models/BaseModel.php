@@ -14,9 +14,9 @@ class BaseModel extends Model
     protected $guarded = ['id'];
 
     /**
-     * The attributes that gets hidden on Model instance.
+     * The attributes that should be hidden for serialization.
      *
      * @var list<string>
      */
-    protected $hidden = ['created_at', 'deleted_at'];
+    protected $hidden = ['created_at', 'updated_at'];
 }
