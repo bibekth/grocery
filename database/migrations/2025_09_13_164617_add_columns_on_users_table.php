@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('mpin')->nullable();
-            $table->string('contact')->unique();
+            $table->string('contact')->unique()->nullable();
             $table->string('otp_code')->nullable();
             $table->integer('otp_registered')->nullable();
             $table->unsignedBigInteger('vendor_id')->nullable();
