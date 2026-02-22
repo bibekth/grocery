@@ -22,7 +22,7 @@
                         d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
                 <span>Vendors</span>
-            </a>    
+            </a>
             <a href="#"
                 class="flex items-center space-x-3 px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-200">
                 <svg class="h-6 w-6 text-indigo-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -70,6 +70,8 @@
                 </button>
             </form>
         </nav>
+
     </div>
+    <span class="" style="position: relative; bottom:0">{{ auth()->user()->name }}</span>
 
 </aside>

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('variant_id')->references('id')->on('variants')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('vendor_id')->references('id')->on('vendors')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('quantity');
-            $table->integer('price');
+            $table->integer('quantity')->default(1);
+            $table->integer('price')->default(0);
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });

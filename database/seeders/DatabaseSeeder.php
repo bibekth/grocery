@@ -17,26 +17,29 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Role::insert([
-            ['name' => 'admin', 'guard_name' => 'web'],
-            ['name' => 'vendor', 'guard_name' => 'web'],
-            ['name' => 'customer', 'guard_name' => 'web'],
+            ['name' => 'super-admin', 'guard_name' => 'web', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'admin', 'guard_name' => 'web', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'vendor', 'guard_name' => 'web', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'customer', 'guard_name' => 'web', 'created_at' => now(), 'updated_at' => now()],
         ]);
-        User::create([
+        $user = User::create([
             'name' => 'Admin',
             'email' => 'admin@example.com',
             'password' => Hash::make('password'),
         ]);
 
-        for($i = 0; $i<100; $i++) {
-            $vendor = Vendor::create([
-                'name' => 'Test Vendor ' . $i,
-                'firm_name' => 'Test Vendor ' . $i,
-                'address' => 'Test Address ' . $i,
-                'contact' => '000000000' . $i,
-                'pan_vat' => '',
-                'email' => 'testvendor' . $i .'@gmail.com'
-            ]);
-        }
+        $user->assignRole('admin');
+        
+        // for($i = 0; $i<100; $i++) {
+        //     $vendor = Vendor::create([
+        //         'name' => 'Test Vendor ' . $i,
+        //         'firm_name' => 'Test Vendor ' . $i,
+        //         'address' => 'Test Address ' . $i,
+        //         'contact' => '000000000' . $i,
+        //         'pan_vat' => '',
+        //         'email' => 'testvendor' . $i .'@gmail.com'
+        //     ]);
+        // }
         // $customer = Customer::create([
         //     'name' => 'Test Customer',
         //     'phone_number' => '0000000001',

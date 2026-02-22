@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('mpin')->nullable();
+            $table->string('mpin', 4)->nullable();
             $table->string('contact')->unique()->nullable();
-            $table->string('otp_code')->nullable();
+            $table->string('otp_code', 6)->nullable();
             $table->integer('otp_registered')->nullable();
             $table->unsignedBigInteger('vendor_id')->nullable();
             $table->foreign('vendor_id')->references('id')->on('vendors')->onDelete('cascade')->onUpdate('cascade');
